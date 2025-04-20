@@ -1,12 +1,10 @@
 const fs = require('fs');
 
-const sentRequest = [];
+const sentRequest = {};
 
   const getLinks = (json) => {
-    return json.map(item => item.string_list_data[0].href)
-
+    return json.relationships_follow_requests_sent.map(item => item.string_list_data[0].href)
   }
 
   const sentRequests = getLinks(sentRequest);
   fs.writeFileSync('./links', JSON.stringify(sentRequests));
-  console.log("Result:", JSON.stringify(sentRequests))

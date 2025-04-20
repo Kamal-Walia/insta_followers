@@ -12,7 +12,4 @@ const followers = [];
 
   const formatedFollowings = simplifyJson(following);
   const formatedFollowers = simplifyJson(followers);
-  console.log("Result:", formatedFollowings.length)
-  console.log("Result:", formatedFollowers.length)
   const notFollowing = formatedFollowings.filter(item => formatedFollowers.includes(item) ? false : item );
-  console.log("Result:", notFollowing)
